@@ -136,6 +136,8 @@ public class QRCodeReaderView extends SurfaceView
      */
     public void startCamera() {
         mCameraManager.startPreview();
+        //Resolve no preview callback data in some devices, when continuously scanning
+        mCameraManager.setPreviewCallback(this);
     }
 
     /**
@@ -378,6 +380,7 @@ public class QRCodeReaderView extends SurfaceView
             } catch (FormatException e) {
                 SimpleLog.d(TAG, "FormatException", e);
             } finally {
+                SimpleLog.d(TAG, "reset");
                 view.mQRCodeReader.reset();
             }
 
