@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_qr_reader/qrcode_reader_view.dart';
+import 'package:super_qr_reader/qrcode_reader_view.dart';
 
 class ScanViewDemo extends StatefulWidget {
   ScanViewDemo({Key key}) : super(key: key);
@@ -22,6 +22,7 @@ class _ScanViewDemoState extends State<ScanViewDemo> {
       body: QrcodeReaderView(
         key: _key,
         onScan: onScan,
+        showBottomOption: false,
         headerWidget: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
